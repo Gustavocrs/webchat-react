@@ -20,7 +20,7 @@ function Titulo(props) {
 }
 
 export default function PaginaInicial() {
-  const [username, setUsername] = useState("gustavocrs")
+  const [username, setUsername] = useState("github")
   const roteamento = useRouter()
 
   return (
@@ -62,13 +62,14 @@ export default function PaginaInicial() {
               width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
             }}
           >
-            <Titulo>Boas vindas de volta!</Titulo>
+            <Titulo>Boas vindas!</Titulo>
             <Text 
             variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
               {appConfig.name}
             </Text>
 
             <TextField
+              placeholder='Entre com seu usuário do github...'
               onChange = {
                 (e) => setUsername(e.target.value)
               }
@@ -112,7 +113,9 @@ export default function PaginaInicial() {
               flex: 1,
               minHeight: '240px',
             }}
-          >
+          > 
+            <h2 className='plogin'>Olá{", "+username+"!"}</h2>
+            
             <Image
               styleSheet={{
                 borderRadius: '50%',
