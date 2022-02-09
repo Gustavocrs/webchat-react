@@ -62,7 +62,7 @@ export default function PaginaInicial() {
               width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
             }}
           >
-            <Titulo>Boas vindas!</Titulo>
+            <Titulo>Boas vindas</Titulo>
             <Text 
             variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
               {appConfig.name}
@@ -114,8 +114,6 @@ export default function PaginaInicial() {
               minHeight: '240px',
             }}
           > 
-            <h2 className='plogin'>Olá{", "+username+"!"}</h2>
-            
             <Image
               styleSheet={{
                 borderRadius: '50%',

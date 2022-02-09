@@ -1,12 +1,6 @@
 function GlobalStyle() {
   return (
     <style global jsx>{`
-
-      .plogin{
-        color: #f1f1f1;
-        font-size: 16px;
-        padding: 0 0 10px 0;
-      }
       * {
         margin: 0;
         padding: 0;
