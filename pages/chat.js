@@ -59,12 +59,13 @@ export default function ChatPage() {
           }}
         >
           <MessageList mensagens={listaDeMensagens} />
-  
+
           <Box
             as="form"
             styleSheet={{
               display: "flex",
-              alignItems: "center",
+              align: "center",
+              justifyContent: "center",
             }}
           >
             <TextField
@@ -75,22 +76,48 @@ export default function ChatPage() {
               }}
               onKeyPress={(event) => {
                 if (event.key === "Enter") {
+                  if (mensagem === "") {
+                    event.preventDefault();
+                    event.target.placeholder =
+                      "Alooww!! Digita algo aqui, poxa!";
+                  } else {
+                    handleNovaMensagem(mensagem);
+                    event.target.placeholder = "Insira sua mensagem aqui...";
+                  }
                   event.preventDefault();
-                  handleNovaMensagem(mensagem);
                 }
               }}
               placeholder="Insira sua mensagem aqui..."
               type="textarea"
               styleSheet={{
                 width: "100%",
+                height: "50px",
                 border: "0",
                 resize: "none",
                 borderRadius: "5px",
                 padding: "6px 8px",
                 backgroundColor: appConfig.theme.colors.neutrals[800],
-                marginRight: "12px",
+                marginRight: "5px",
                 color: appConfig.theme.colors.neutrals[200],
               }}
+            />
+
+            <Button
+              variant="tertiary"
+              colorVariant="neutral"
+              label="Enviar"
+              styleSheet={{
+                border: "1px solid",
+                height: "50px",
+                padding: "6px 8px",
+              }}
+
+              onClick={() => {
+                if (mensagem != ""){
+                  handleNovaMensagem(mensagem);
+                }                  
+                }
+              }
             />
           </Box>
         </Box>
@@ -111,12 +138,27 @@ function Header() {
           justifyContent: "space-between",
         }}
       >
-        <Text variant="heading5">Chat</Text>
+        <Text
+          variant="heading3"
+          styleSheet={{
+            color: appConfig.theme.colors.neutrals[200],
+          }}
+        >
+          Messenger Web Chat
+        </Text>
+        {/* <Button
+          variant="tertiary"
+          colorVariant="neutral"
+          label="Limpar"
+        /> */}
         <Button
           variant="tertiary"
           colorVariant="neutral"
-          label="Logout"
+          label="Sair"
           href="/"
+          styleSheet={{
+            border: "1px solid",
+          }}
         />
       </Box>
     </>
