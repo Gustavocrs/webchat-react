@@ -1,6 +1,7 @@
 {
   "name": "alura_cord",
   "version": "1.0.0",
+  "homepage": "webchat-react/",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
